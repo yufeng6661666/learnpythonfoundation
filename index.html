@@ -1,0 +1,1635 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+
+.markdown-content {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #212529;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.markdown-content h1, .markdown-content h2, .markdown-content h3, 
+.markdown-content h4, .markdown-content h5, .markdown-content h6 {
+    margin-top: 1.2em;
+    margin-bottom: 0.6em;
+    color: #4361ee;
+    font-weight: 600;
+}
+
+.markdown-content h1 {
+    border-bottom: 2px solid #4361ee;
+    padding-bottom: 5px;
+    font-size: 2em;
+}
+
+.markdown-content h2 {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 3px;
+    font-size: 1.5em;
+}
+
+.markdown-content h3 {
+    font-size: 1.3em;
+}
+
+.markdown-content p {
+    margin-bottom: 1em;
+    line-height: 1.6;
+}
+
+.markdown-content blockquote {
+    border-left: 4px solid #4cc9f0;
+    padding: 10px 15px;
+    margin: 15px 0;
+    background-color: #f9f9f9;
+    color: #555;
+    font-style: italic;
+    border-radius: 0 8px 8px 0;
+}
+
+.markdown-content code {
+    background-color: #f1f1f1;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    color: #d63384;
+}
+
+.markdown-content pre {
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 15px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: relative;
+    background: #2d2d2d;
+    color: #f8f8f2;
+}
+
+.markdown-content pre code {
+    background: none;
+    padding: 15px;
+    display: block;
+    color: inherit;
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+.markdown-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.markdown-content table th, .markdown-content table td {
+    border: 1px solid #ddd;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.markdown-content table th {
+    background-color: #4361ee;
+    color: white;
+    font-weight: 600;
+}
+
+.markdown-content table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.markdown-content table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.markdown-content ul, .markdown-content ol {
+    margin-left: 20px;
+    margin-bottom: 1em;
+}
+
+.markdown-content ul {
+    list-style-type: disc;
+}
+
+.markdown-content ol {
+    list-style-type: decimal;
+}
+
+.markdown-content li {
+    margin-bottom: 5px;
+}
+
+.markdown-content a {
+    color: #3a0ca3;
+    text-decoration: none;
+    border-bottom: 1px dotted #3a0ca3;
+    transition: all 0.3s ease;
+}
+
+.markdown-content a:hover {
+    color: #4361ee;
+    border-bottom: 1px solid #4361ee;
+}
+
+.markdown-content hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #4cc9f0, transparent);
+    margin: 20px 0;
+}
+
+/* 代码高亮样式 - 字符串改为绿色 */
+.hljs { display: block; overflow-x: auto; padding: 1em; }
+.hljs-comment, .hljs-quote { color: #6a9955; }
+.hljs-variable, .hljs-template-variable, .hljs-tag, .hljs-name, .hljs-selector-id, .hljs-selector-class, .hljs-regexp, .hljs-deletion { color: #d73a49; }
+.hljs-number, .hljs-built_in, .hljs-builtin-name, .hljs-literal, .hljs-type, .hljs-params, .hljs-meta, .hljs-link { color: #005cc5; }
+.hljs-attribute { color: #6f42c1; }
+.hljs-string, .hljs-symbol, .hljs-bullet, .hljs-addition { color: #7ec699; } /* 绿色字符串 */
+.hljs-title, .hljs-section { color: #6f42c1; }
+.hljs-keyword, .hljs-selector-tag { color: #d73a49; }
+.hljs-emphasis { font-style: italic; }
+.hljs-strong { font-weight: bold; }
+
+</style>
+</head>
+<body>
+<div class="markdown-content">
+<p>Python基础</p>
+<h1 id="python入门">Python入门</h1>
+<h2 id="目录">目录</h2>
+<h3 id="第零章：引言">第零章：引言</h3>
+<p>0.1 引言</p>
+<h3 id="第一章：输入输出">第一章：输入输出</h3>
+<p>1.1 引言</p>
+<p>1.2 输出</p>
+<p>1.3 输入</p>
+<p>1.4 end参数</p>
+<p>1.5 程序设计</p>
+<h3 id="第二章：注释">第二章：注释</h3>
+<p>2.1 引言</p>
+<p>2.2 注释基础概念</p>
+<p>2.3 单行注释和多行注释</p>
+<h3 id="第三章：docstring">第三章：docstring</h3>
+<p>3.1 引言</p>
+<p>3.2 什么是docstring</p>
+<p>3.3 获得docstring方法</p>
+<h3 id="第四章：变量">第四章：变量</h3>
+<p>4.1 引言</p>
+<p>4.2 基础理解变量</p>
+<p>4.3 定义变量</p>
+<p>4.4 变量的数据类型</p>
+<p>4.5 数据连接</p>
+<p>4.6 程序设计</p>
+<h3 id="第五章：数据类型转换">第五章：数据类型转换</h3>
+<p>5.1 引言</p>
+<p>5.2 字符串整数互转</p>
+<p>5.3 整数，字符串转布尔</p>
+<p>5.4 认识进制</p>
+<p>5.5 认识进制函数</p>
+<p>5.6 进制互转</p>
+<p>5.7 程序设计</p>
+<h3 id="第六章：结构">第六章：结构</h3>
+<p>6.1 引言</p>
+<p>6.2 for语句</p>
+<p>6.3 if语句</p>
+<p>6.4 while语句</p>
+<p>6.5 嵌套结构</p>
+<p>6.6 match-case结构</p>
+<p>6.7 程序设计</p>
+<h3 id="第七章：运算符">第七章：运算符</h3>
+<p>7.1 引言</p>
+<p>7.2 运算符</p>
+<p>7.3 程序设计</p>
+<h3 id="第八章：字符串">第八章：字符串</h3>
+<p>8.1 引言</p>
+<p>8.2 字符串</p>
+<p>8.3 遍历字符串</p>
+<p>8.4 输出改变后的字符串字符</p>
+<p>8.5 字符串切片</p>
+<p>8.6 程序设计</p>
+<h3 id="第九章：列表">第九章：列表</h3>
+<p>9.1 引言</p>
+<p>9.2 列表</p>
+<p>9.3 列表下标</p>
+<p>9.4 遍历列表</p>
+<p>9.5 切片操作</p>
+<p>9.6 元素</p>
+<p>9.7 反转列表</p>
+<p>9.8 二维列表</p>
+<p>9.9 程序设计</p>
+<h3 id="第十章：字典">第十章：字典</h3>
+<p>10.1 引言</p>
+<p>10.2 字典</p>
+<p>10.3 字典常用操作</p>
+<p>10.4 setdefalut设置默认值</p>
+<p>10.5 程序设计</p>
+<h3 id="第十一章：元组">第十一章：元组</h3>
+<p>11.1 引言</p>
+<p>11.2 元组</p>
+<p>11.3 删除元素</p>
+<p>11.4 添加元素和改变元素的方法</p>
+<p>11.5 程序设计</p>
+<h3 id="第十二章：集合">第十二章：集合</h3>
+<p>12.1 引言</p>
+<p>12.2 集合</p>
+<p>12.3 添加元素的方法</p>
+<p>12.4 删除元素方法</p>
+<p>12.5 快速过滤列表相同内容</p>
+<p>12.6 交集，并集，差集</p>
+<p>12.7 程序设计</p>
+<h3 id="第十三章：函数">第十三章：函数</h3>
+<p>13.1 引言</p>
+<p>13.2 定义函数基本要素</p>
+<p>13.3 参数分类</p>
+<p>13.4 嵌套函数</p>
+<p>13.5 递归</p>
+<p>13.6 写docstring</p>
+<p>13.7 程序设计</p>
+<h3 id="第十四章：文件操作">第十四章：文件操作</h3>
+<p>14.1 引言</p>
+<p>14.2 操作文件基本操作</p>
+<p>14.3 使用with语句</p>
+<h3 id="第十五章：异常处理">第十五章：异常处理</h3>
+<p>15.1 引言</p>
+<p>15.2 处理异常</p>
+<p>15.3 主动抛出异常</p>
+<h3 id="第十六章：基础类">第十六章：基础类</h3>
+<p>16.1 引言</p>
+<p>16.2 初始化类</p>
+<p>16.3 类中的函数并调用</p>
+<h3 id="第十七章：模块和包">第十七章：模块和包</h3>
+<p>17.1 引言</p>
+<p>17.2 什么是内置模块</p>
+<p>17.3 什么是标准库</p>
+<p>17.4 什么是第三方库</p>
+<p>17.5 模块是什么</p>
+<p>17.6 包是什么</p>
+<h3 id="第十八章：python虚拟环境">第十八章：Python虚拟环境</h3>
+<p>18.1 引言</p>
+<p>18.2 虚拟环境重要性</p>
+<p>18.3 Python自带虚拟环境工具</p>
+<p>18.4 第三方工具</p>
+<h3 id="附录">附录</h3>
+<p>19.1 Python如何下载安装</p>
+<p>19.2 pip的基础使用方式</p>
+<p>19.3 进阶理解变量，列表</p>
+<h2 id="第零章：引言-1">第零章：引言</h2>
+<h3 id="01-引言">0.1 引言</h3>
+<p>本书旨在教育，帮助人基础的入门Python，在这本书不会扯什么高大上的词汇，用尽量懂的语言让你听懂，所以这本书是以最浅显的话揭示高深的内涵。</p>
+<p>我为什么会选择Python？我一直认为Python是一个很成功的高级语言，它庞大的生态体系，简单的语法不是其它编程语言可以比拟的，要说Python唯几的缺点就是运行速度慢，和打包后体型较大，但是新手一定要首选Python，不要听网上人说要选C语言和C++，先学习C/C++.可能会放弃，甚至断绝兴趣，而且Python就业方向是很多的，现在的很火的AI就是由Python训练的。</p>
+<p>咱们不说废话，以精简的语言快速速通Python入门，全篇加上引言，目录等约2万字左右。</p>
+<p>本书Python版本以3.13.2为例。</p>
+<p>　　　　　　　　　　 　 2025年8月14日<br>　　　　　　　　　　　　　　　    编者</p>
+<h2 id="第一章：输入输出-1">第一章：输入输出</h2>
+<h3 id="11-引言">1.1 引言</h3>
+<p>你会在网上常常看到类似视频：</p>
+<p>一个人在视频中用任意一个编程语言编写打印Hello World!的代码，然后把代码慢慢删掉，之后卡点一些写LeetCode的题目，或者一些代码之类的，文案通常配上“梦开始的地方”或者“故事的开头总是极具温柔”。<br>你现在看这本书，也肯定是羡慕他们会使用代码，看起来很酷的样子。</p>
+<p>你首选Python是一个不二之选，这个编程语言较为简单，所以让我们开启这段学习Python的旅程吧。</p>
+<p>首先先学习输入输出吧。</p>
+<h3 id="12-输出">1.2 输出</h3>
+<p>我们刚刚说了有人会使用任意编程语言打印Hello World!，事实上这是我们编程里面公认的最简单代码，那我们就先从这里开始学吧。</p>
+<pre><code class="language-python"><span class="hljs-comment">#例1.1</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">"Hello World!"</span>)
+</code></pre>
+<p>#后的不用管，如果你用Python解释器（Python如何下载看附录19.1）运行这段代码，你会看到输出：</p>
+<pre><code class="language-test">Hello World!
+</code></pre>
+<p>由此我们能知道print是打印作用，""里就是打印内容。</p>
+<p>当然我们可以把""换成''，这样也能运行，因为""几乎等价''。</p>
+<h3 id="13-输入">1.3 输入</h3>
+<p>在编程里，除了输出还有一件重要事——输入，为什么呢？像别人要帮助你完成一些需求，你总归得把需求告诉他，他才能帮你完成，或者更直观的，程序本来有一段能实现整数数字转二进制的，你想要看看2的二进制是多少，如果没有输入，你就得把这个文件打开，把里面代码修改才行，为了简化此过程，发明了输入，这时，你只要在程序停的地方输入2即可看到2的二进制，同时一般来说要输入的地方会有输入的提示。</p>
+<p>从本小段你可以认识到如何输出。</p>
+<pre><code class="language-Python"><span class="hljs-comment">#例1.2</span>
+<span class="hljs-built_in">input</span>()
+</code></pre>
+<p>这是一段最简单的输入代码，如果你运行，可以输出如下：</p>
+<pre><code class="language-test">
+</code></pre>
+<p>对就是无输出，然后你往里面输入一个1试试呢？那么输出就是：</p>
+<pre><code class="language-test">1
+</code></pre>
+<p>然后，你按回车键即可结束程序。<br>正如我之前所言，你不给个输入提示，用户又不是开发者，ta哪里知道要什么时候输入，所以我们可以制作一个输入提示：</p>
+<pre><code class="language-Python"><span class="hljs-comment">#例1.3</span>
+<span class="hljs-built_in">input</span>(<span class="hljs-string">"输入一个数字："</span>)
+</code></pre>
+<p>此时运行，输出如下：</p>
+<pre><code class="language-test">输入一个数字：
+</code></pre>
+<p>此时，输入一个1，输出如下：</p>
+<pre><code class="language-test">输入一个数字：1
+</code></pre>
+<p>回车键即可取消运行。</p>
+<h3 id="14-end参数">1.4 end参数</h3>
+<p>事实上，print()里面还可以写一个end=参数，这是常见的好用的参数。</p>
+<p>在这之前，我们先学习一下制表符。</p>
+<p>制表符你不需要理解太多，在基础中你只要知道以下即可：</p>
+<table>
+<thead>
+<tr>
+<th>制表符</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>\n</td>
+<td>换行</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>对齐</td>
+</tr>
+</tbody></table>
+<p>如果end参数没写，默认是\n，如果写end参数，但没写是什么制表符，那么后面的输出会在前一个输出的后面，我们来演示一下：</p>
+<pre><code class="language-python"><span class="hljs-comment">#例1.4</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">"Hello "</span>,end=<span class="hljs-string">""</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">"World"</span>,end=<span class="hljs-string">""</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">"!"</span>)
+</code></pre>
+<p>输出：</p>
+<pre><code class="language-test">Hello World!
+</code></pre>
+<p>如果你还想要知道其它参数，你可以自己上网查阅相关资料。</p>
+<h3 id="15-程序设计">1.5 程序设计</h3>
+<p>【例题1.1】：</p>
+<p>题目描述：输入一段话，打印这段话。</p>
+<p>输入格式：任意一段话。</p>
+<p>输出格式：这一段话。</p>
+<p>样例输入 #1</p>
+<pre><code class="language-test">Hello World!
+Hello World!
+</code></pre>
+<p>样例输出 #1</p>
+<pre><code class="language-test">Hello World!
+</code></pre>
+<p>样例输入 #2</p>
+<pre><code class="language-test">你好世界!
+</code></pre>
+<p>样例输出 #2</p>
+<pre><code>你好世界!
+</code></pre>
+<p>分析：<br>我们现在知道了input()是接收用户输入的东西，而print()是打印一段东西，那么我们可以结合一下使用：</p>
+<pre><code class="language-Python"><span class="hljs-comment">#例1.5</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">input</span>())
+</code></pre>
+<p>这段程序会优先执行input()，让用户输入，然后打印用户输入的，输出如下：</p>
+<pre><code class="language-test">Hello World!
+Hello World!
+</code></pre>
+<pre><code class="language-test">你好世界!
+你好世界!
+</code></pre>
+<p>【例题1.2】：</p>
+<p>题目描述：输入一段话，打印这段话，并与输入的话在一行。</p>
+<p>输入格式：任意一段话。</p>
+<p>输出格式：一行这一段话的两次。</p>
+<p>样例输入 #1</p>
+<pre><code class="language-test">Hello World!
+</code></pre>
+<p>样例输出 #1</p>
+<pre><code class="language-test">Hello World!Hello World!
+</code></pre>
+<p>分析：</p>
+<p>我们学习了end参数，如果里面只填写""，那么便可以不用换行，在一行，直接用end参数即可，代码如下：</p>
+<pre><code class="language-Python"><span class="hljs-comment">#例1.6</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">input</span>(),end=<span class="hljs-string">""</span>)
+</code></pre>
+<p>输出：</p>
+<pre><code class="language-test">HelloWorld!HelloWorld!
+</code></pre>
+<h2 id="第二章：注释-1">第二章：注释</h2>
+<h3 id="21-引言">2.1 引言</h3>
+<p>在之前很多代码中，我都使用过一个#，我最早在例1.1中使用，当时，我说你不用管，你现在一定很疑惑吧，现在让我们来学习注释。</p>
+<h3 id="22-注释基础概念">2.2 注释基础概念</h3>
+<p>注释就是一段代码的解释，在一段难懂的代码或者一个个变量需要注释，这里来演示一下：</p>
+<pre><code class="language-python"><span class="hljs-comment">#例2.1</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">"Hello"</span>)  <span class="hljs-comment"># 打印Hello</span>
+</code></pre>
+<h3 id="23-单行注释和多行注释">2.3 单行注释和多行注释</h3>
+<p>我们刚才所接触的注释就是单行注释，这种注释标准注释为：</p>
+<p>在一段代码后面加注释，标准规范是：空两格加#空格加注释内容，如果注释前面没有代码，直接在开头加上#再空格再加上注释内容。</p>
+<p>那什么是多行注释？</p>
+<p>多行注释一般只会出现在空白区域，不会出现在代码后面，例如：</p>
+<pre><code class="language-python"><span class="hljs-comment">#例2.2</span>
+<span class="hljs-string">"""
+打印Hello
+"""</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">"Hello"</span>)
+</code></pre>
+<h2 id="第三章：docstring-1">第三章：docstring</h2>
+<h3 id="31-引言">3.1 引言</h3>
+<p>对于模块等结构或者什么，我们并不知道它们做什么，此时就是docstring的发扬时刻，那么该章节我们就来基础理解docstring吧。</p>
+<h3 id="32-什么是docstring">3.2 什么是docstring</h3>
+<p>简单来说，就像你玩游戏或者使用一款产品，你并不知道该咋做，所以，你玩游戏就需要上网查指南，或者跟着新手教程做，使用一款产品你得看自带的说明书。<br>那么，docstring就是一个模块，一段程序在做什么，能干什么，需要怎么样，通常用一对三引号包裹，即"""内容"""。</p>
+<h3 id="33-获得docstring方法">3.3 获得docstring方法</h3>
+<p>获取docstring有两种方法，__doc__方法和help()方法，且看第一种方法。<br>一般来说第一种方法的格式为：东西. __doc__，例如：</p>
+<pre><code class="language-python"><span class="hljs-comment">#例3.1</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">print</span>.__doc__)
+</code></pre>
+<p>输出：</p>
+<pre><code class="language-test">Prints the values <span class="hljs-keyword">to</span> a stream, <span class="hljs-built_in">or</span> <span class="hljs-keyword">to</span> sys.stdout <span class="hljs-keyword">by</span> <span class="hljs-keyword">default</span>.
+
+  sep
+    <span class="hljs-type">string</span> inserted between values, <span class="hljs-keyword">default</span> a space.
+  <span class="hljs-keyword">end</span>
+    <span class="hljs-type">string</span> appended after the last value, <span class="hljs-keyword">default</span> a newline.
+  file
+    a file-<span class="hljs-built_in">like</span> <span class="hljs-type">object</span> (stream); defaults <span class="hljs-keyword">to</span> the current sys.stdout.
+  flush
+    whether <span class="hljs-keyword">to</span> forcibly flush the stream.
+</code></pre>
+<p>正如这些所说，sep，end，file，flush是print都所有参数，对于基础只要记住end参数即可。</p>
+<p>第二种方法，help()，一般来说格式为：help(东西)，例如：</p>
+<pre><code class="language-python"><span class="hljs-comment">#例3.2</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">help</span>(<span class="hljs-built_in">input</span>))
+</code></pre>
+<p>输出：</p>
+<pre><code class="language-test">Help <span class="hljs-keyword">on</span> built-<span class="hljs-keyword">in</span> <span class="hljs-keyword">function</span> input <span class="hljs-keyword">in</span> <span class="hljs-keyword">module</span> bui
+<span class="hljs-symbol">ltins:</span>
+
+input(prompt=<span class="hljs-comment">'', /)</span>
+    Read a <span class="hljs-type">string</span> <span class="hljs-keyword">from</span> standard input.  The t
+railing newline <span class="hljs-built_in">is</span> stripped.
+
+    The prompt <span class="hljs-type">string</span>, <span class="hljs-keyword">if</span> given, <span class="hljs-built_in">is</span> printed t
+o standard output without a
+    trailing newline before reading input.
+
+    <span class="hljs-keyword">If</span> the user hits EOF (*nix: Ctrl-D, Windo
+<span class="hljs-symbol">ws:</span> Ctrl-Z+<span class="hljs-keyword">Return</span>), raise EOFError.
+    <span class="hljs-keyword">On</span> *nix systems, readline <span class="hljs-built_in">is</span> used <span class="hljs-keyword">if</span> avai
+lable.
+
+None
+</code></pre>
+<p>如果你有兴趣看的话，你用help()和__doc__输出同一个东西，两次是不一样的，我们常用__doc__进行。</p>
+<h2 id="第四章：变量-1">第四章：变量</h2>
+<h3 id="41-引言">4.1 引言</h3>
+<p>我们生活中有很多东西来存储东西，像盒子，盒子能摆放很多能放的进去的东西，也有比较小的，只能摆放一个，今天我们来学习比较小的盒子——变量。</p>
+<h3 id="42-基础理解变量">4.2 基础理解变量</h3>
+<p>正如引言所说，变量就是一个很小的盒子，只能摆放一个东西，但是这种盒子上限很高，下限也挺低，小到只能装一个灰尘，大到能装一个宇宙，只要这只是一个。</p>
+<p>但是呢，变量与盒子有很大不同，变量只能存储数据，盒子只能存储现实物品，那么让我们一起看看变量如何操作吧。</p>
+<h3 id="43-定义变量">4.3 定义变量</h3>
+<p>现在，先让我们学习最基础的定义变量吧。<br>我们先学习一个符号<code>=</code>，这是赋值符号，将符号右边的赋值到符号左边，现在知道这个，我们就开始定义一个变量吧：</p>
+<pre><code class="language-python"><span class="hljs-comment">#例4.1</span>
+a=<span class="hljs-number">1</span>
+<span class="hljs-built_in">print</span>(a)
+</code></pre>
+<p>在第二行，我们定义了变量a，并赋值为1，第三行的作用打印a，由此所见，print()里不止可以写表达式，也可以写变量，也可以写""里的内容。</p>
+<p>当然，变量不止能定义数字，还可以：</p>
+<pre><code class="language-python"><span class="hljs-comment">#例4.2</span>
+a=<span class="hljs-string">"123"</span>
+<span class="hljs-built_in">print</span>(a)
+</code></pre>
+<p>变量也可以定义为""里的东西。</p>
+<p>事实上，由""，''，""""""包裹起来的，我们统称为字符串，以后我们会详细讲解。</p>
+<p>现在，命名变量有一些规则，可以看看：</p>
+<p>1.变量只能包含字母，数字，下划线（_）。</p>
+<p>2.变量开头不能是数字。</p>
+<p>3.变量不能是关键字，即内置函数。（能定义但是会丧失原本的功能）</p>
+<p>此外，变量会被覆盖，例如：</p>
+<pre><code class="language-python"><span class="hljs-comment">#例4.3</span>
+a=<span class="hljs-number">1</span>
+<span class="hljs-built_in">print</span>(a)
+a=<span class="hljs-number">2</span>
+<span class="hljs-built_in">print</span>(a)
+a=<span class="hljs-string">"i"</span>
+<span class="hljs-built_in">print</span>(a)
+</code></pre>
+<p>输出：</p>
+<pre><code class="language-test"><span class="hljs-number">1</span>
+<span class="hljs-number">2</span>
+<span class="hljs-selector-tag">i</span>
+</code></pre>
+<h3 id="44-变量的数据类型">4.4 变量的数据类型</h3>
+<p>除了整形数字和字符串，我们还可以有什么能定义变量，学到现在，我还可以告诉你还能定义一个，浮点数。</p>
+<p>浮点数，比较简单，浮点数说白了就是小数，定义浮点数方法参考如下：</p>
+<pre><code class="language-python"><span class="hljs-comment">#例4.4</span>
+a=<span class="hljs-number">0.1</span>
+</code></pre>
+<p>需要注意一个问题，浮点数精度问题，举个简单的例子：0.1+0.2不等于0.3，解决问题以后会讲解。</p>
+<h3 id="45-数据连接">4.5 数据连接</h3>
+<p>数据连接也叫字符串格式化，字符串格式化有三种方法：f-string，format，+，%，我们慢慢讲。</p>
+<p>f-string：现在很流行的做法，支持3.6及以上，可以用{}在里面加入表达式变量，来实现字符串格式化，效率高，简单，例如：</p>
+<pre><code class="language-python"><span class="hljs-comment">#例4.5</span>
+a = <span class="hljs-number">5</span>
+b = <span class="hljs-string">"小明"</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f"<span class="hljs-subst">{b}</span>今年<span class="hljs-subst">{a}</span>岁了。"</span>)
+</code></pre>
+<p>输出：</p>
+<pre><code class="language-test">小明今年5岁了。
+</code></pre>
+<p>format：现在和以前都很流行的做法，支持2.6及以上通过{}占位来实现字符串格式化操作，效率高，复杂，功能丰富，例如：</p>
+<pre><code class="language-python"><span class="hljs-comment">#例4.6</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">"{ }今年{ }岁了。"</span>.<span class="hljs-built_in">format</span>(<span class="hljs-string">"小明"</span>,<span class="hljs-number">5</span>))
+<span class="hljs-comment">#按照默认顺序输出</span>
+</code></pre>
+<p>输出：</p>
+<pre><code class="language-test">小明今年5岁了。
+</code></pre>
+<p>或者代码这样写：</p>
+<pre><code class="language-python"><span class="hljs-comment">#例4.7</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">"{name}今年{age}岁了。"</span>.<span class="hljs-built_in">format</span>(name=<span class="hljs-string">"小明"</span>,age=<span class="hljs-number">5</span>))
+<span class="hljs-comment">#关键字输出</span>
+</code></pre>
+<p>输出：</p>
+<pre><code class="language-test">小明今年5岁了。
+</code></pre>
+<p>代码也可以这样写：</p>
+<pre><code class="language-python"><span class="hljs-comment">#例4.8</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">"{1}今年{0}岁了。"</span>.<span class="hljs-built_in">format</span>(<span class="hljs-number">5</span>,<span class="hljs-string">"小明"</span>))
+<span class="hljs-comment">#通过位置输出</span>
+</code></pre>
+<p>除此以外format还支持数字格式化，进制转换，转移大括号，有兴趣的可以去查一下。</p>
+<p>+拼接：仅限同类型，几乎支持所有版本，现在不流行，效率低，例如：</p>
+<pre><code class="language-python"><span class="hljs-comment">#例4.9</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">"3"</span>+<span class="hljs-string">"2"</span>+<span class="hljs-string">"1"</span>)
+</code></pre>
+<p>输出：</p>
+<pre><code class="language-test">321
+</code></pre>
+<p>如果这样写：</p>
+<pre><code class="language-python"><span class="hljs-comment">#例4.10</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">"3"</span>+<span class="hljs-string">"2"</span>+<span class="hljs-number">1</span>)
+</code></pre>
+<p>这样写会抛出一个TypeError，有局限性。</p>
+<p>%格式化：这个有严重的bug，官方文档也说了不建议使用这个，现在已经弃用了，想要知道的，自己可以查一下，这里不过多解释。</p>
+<h3 id="46-程序设计">4.6 程序设计</h3>
+<p>【例题4.1】：</p>
+<p>题目描述：</p>
+<p>输入一个字符串，在后面分别拼接+1和+2，并换行输出。</p>
+<p>输入格式：</p>
+<p>输入一个字符串。</p>
+<p>输出格式：</p>
+<p>共两行，分别表示拼接+1，拼接+2。</p>
+<p>样例输入 #1</p>
+<pre><code class="language-test">5
+</code></pre>
+<p>样例输出 #1</p>
+<pre><code class="language-test">5+1
+5+2
+</code></pre>
+<p>样例输入 #2</p>
+<pre><code class="language-test"><span class="hljs-selector-tag">p</span>
+</code></pre>
+<p>样例输出 #2</p>
+<pre><code class="language-test"><span class="hljs-selector-tag">p</span>+<span class="hljs-number">1</span>
+<span class="hljs-selector-tag">p</span>+<span class="hljs-number">2</span>
+</code></pre>
+<p>分析：</p>
+<p>这题要输出两行，而且需要输入，就没办法使用两个input来输出了，这样会造成两个输入，我们可以用刚刚学习的变量，字符串格式化使用f-string即可，代码如下：</p>
+<pre><code class="language-python"><span class="hljs-comment">#例4.11</span>
+a=<span class="hljs-built_in">input</span>()
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f"<span class="hljs-subst">{a}</span>+1"</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f"<span class="hljs-subst">{a}</span>+2"</span>)
+</code></pre>
+<p>输出：</p>
+<pre><code class="language-test">5+1
+5+2
+</code></pre>
+<pre><code class="language-test"><span class="hljs-selector-tag">p</span>+<span class="hljs-number">1</span>
+<span class="hljs-selector-tag">p</span>+<span class="hljs-number">2</span>
+</code></pre>
+<h2 id="第五章：数据类型转换-1">第五章：数据类型转换</h2>
+<h3 id="51-引言">5.1 引言</h3>
+<p>我们现在学习了很多数据类型，那么我们该如何进行互转呢，今天我们来学习数据类型互转。</p>
+<h3 id="52-字符串整数互转">5.2 字符串整数互转</h3>
+<p>字符串我们常常称为string，整数被称为int。</p>
+<p>那么，标题简化便是"int string互转"，同时string简称str，所以还可以简化为"int str互转"。</p>
+<p>OK，那么我们开始吧。</p>
+<p>现在，int-&gt;str就是str函数，我们来使用一下：</p>
+<pre><code class="language-python"><span class="hljs-comment">#例5.1</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">str</span>(<span class="hljs-number">5</span>))
+</code></pre>
+<p>输出：</p>
+<pre><code class="language-test">5
+</code></pre>
+<p>之所以这是5，看起来像int，事实上，我们用str()转成了str，所以输出的其实是str。</p>
+<p>之后我们来看看str-&gt;int，同样是int函数，我们来看看代码：</p>
+<pre><code class="language-python"><span class="hljs-comment">#例5.2</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">int</span>(<span class="hljs-string">"5"</span>))
+</code></pre>
+<p>输出：</p>
+<pre><code class="language-test">5
+</code></pre>
+<p>这个5看起来像int，事实上真是int。</p>
+<h3 id="53-整数，字符串转布尔">5.3 整数，字符串转布尔</h3>
+<p>我们先认识一下什么是布尔吧，布尔只有两个值，我们叫它们True和False，用数字表示分别是1和0，布尔我们常用bool来代替。</p>
+<p>现在，我们可以用bool函数将值改为bool，这个值可以是字符串，数字，表达式。</p>
+<p>我们来记下几个特殊的：</p>
+<p>如果值是数字，且为0，那么布尔值为False，如果非0，布尔值为True。</p>
+<p>如果值是字符串，如果不为空，布尔值为True，如果是空的，那么为False。</p>
+<p>值是空白，默认是False</p>
+<p>OK，我们分别试一下，代码如下：</p>
+<pre><code class="language-python"><span class="hljs-comment">#例5.3</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">bool</span>(<span class="hljs-number">1</span>))
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">bool</span>(<span class="hljs-number">0</span>))
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">bool</span>(<span class="hljs-string">"0"</span>))
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">bool</span>(<span class="hljs-string">""</span>))
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">bool</span>())
+</code></pre>
+<p>输出</p>
+<pre><code class="language-test"><span class="hljs-literal">True</span>
+<span class="hljs-literal">False</span>
+<span class="hljs-literal">True</span>
+<span class="hljs-literal">False</span>
+<span class="hljs-literal">False</span>
+</code></pre>
+<h3 id="54-认识进制">5.4 认识进制</h3>
+<p>在我们生活中有很多的进制存在，在电脑中常用的进制有十进制，二进制，八进制，十六进制，我们常用的是十进制，也就是逢十进一，所以二进制就是逢二进一，其实我们还有很多进制，例如：26进制，32进制，36进制，52进制，56进制，62进制等等。</p>
+<p>我们来基础的看一下二进制，八进制，十进制，十六进制的区别（以十进制10为例）：</p>
+<table>
+<thead>
+<tr>
+<th>进制</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>二进制</td>
+<td>1010</td>
+</tr>
+<tr>
+<td>八进制</td>
+<td>12</td>
+</tr>
+<tr>
+<td>十进制</td>
+<td>10</td>
+</tr>
+<tr>
+<td>十六进制</td>
+<td>a</td>
+</tr>
+</tbody></table>
+<h3 id="55-认识进制函数">5.5 认识进制函数</h3>
+<p>我们常用的进制函数仅有二进制，八进制，十进制，十六进制。</p>
+<p>以下是对应的进制与函数：</p>
+<pre><code class="language-test">十进制 -&gt; <span class="hljs-built_in">int</span>()
+八进制 -&gt; <span class="hljs-built_in">oct</span>()
+十六进制 -&gt; <span class="hljs-built_in">hex</span>()
+二进制 -&gt; <span class="hljs-built_in">bin</span>()
+</code></pre>
+<h3 id="56-进制互转">5.6 进制互转</h3>
+<p>我们需要知道如下：</p>
+<p>int只接受字符串，因为二进制不是数字，八进制和十六进制会出现非数字字符，通常的格式为：</p>
+<pre><code class="language-python"><span class="hljs-built_in">int</span>(字符串，进制)
+</code></pre>
+<p>其中进制只填写数字，也就是填：2，8，16。</p>
+<p>oct，hex，bin只接受数字，也就是只接受十进制，它们的格式分别为：</p>
+<pre><code class="language-python"><span class="hljs-built_in">oct</span>(十进制值)
+<span class="hljs-built_in">hex</span>(十进制值)
+<span class="hljs-built_in">bin</span>(十进制值)
+</code></pre>
+<p>例如：</p>
+<pre><code class="language-python"><span class="hljs-comment">#例5.4</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">int</span>(<span class="hljs-string">"1010"</span>,<span class="hljs-number">2</span>))
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">int</span>(<span class="hljs-string">"a"</span>,<span class="hljs-number">16</span>))
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">int</span>(<span class="hljs-string">"12"</span>,<span class="hljs-number">8</span>))
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">bin</span>(<span class="hljs-number">10</span>))
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">hex</span>(<span class="hljs-number">10</span>))
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">oct</span>(<span class="hljs-number">10</span>))
+</code></pre>
+<p>输出：</p>
+<pre><code class="language-test">10
+10
+10
+0b1010
+0xa
+0o12
+</code></pre>
+<p>其中0b代表二进制，0x代表十六进制，0o代表八进制，通常只看后面的。</p>
+<h3 id="57-程序设计">5.7 程序设计</h3>
+<p>【例题5.1】</p>
+<p>阅读如下代码，会输出什么：</p>
+<pre><code class="language-python"><span class="hljs-built_in">print</span>(<span class="hljs-built_in">bool</span>(<span class="hljs-number">0</span>))
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">bool</span>(<span class="hljs-string">""</span>))
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">bool</span>(<span class="hljs-number">0.0</span>))
+</code></pre>
+<p>分析：我们之前说过，用bool函数判断0和空字符串会返回一个False，0.0也是0，所以也是False，所以答案为：</p>
+<pre><code class="language-test"><span class="hljs-literal">False</span>
+<span class="hljs-literal">False</span>
+<span class="hljs-literal">False</span>
+</code></pre>
+<p>嗯，都是False。</p>
+<p>【例题5.2】</p>
+<p>题目描述：</p>
+<p>输入一个数字，把它加上5。</p>
+<p>输入格式：</p>
+<p>一行，一个数字。</p>
+<p>输出格式：</p>
+<p>一行，一个数字，代表输入的数字加上5。</p>
+<p>样例输入 #1</p>
+<pre><code class="language-test">15
+</code></pre>
+<p>样例输出 #1</p>
+<pre><code>20
+</code></pre>
+<p>样例输入 #2</p>
+<pre><code><span class="hljs-deletion">-5</span>
+</code></pre>
+<p>样例输出 #2</p>
+<pre><code>0
+</code></pre>
+<p>分析：当我们输入任何东西时，哪怕是一段数字，也是字符串，既然题目说输入数字，那么我们只需要当它是数字就行。我们可以用int函数把string变成int，然后加上5即可，代码如下：</p>
+<pre><code class="language-python"><span class="hljs-comment">#例5.5</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>())+<span class="hljs-number">5</span>)
+</code></pre>
+<p>输出：</p>
+<pre><code class="language-test">20
+</code></pre>
+<pre><code class="language-test">0
+</code></pre>
+<p>【例题5.3】</p>
+<p>题目描述：</p>
+<p>输入一个十进制，把它转成二进制。</p>
+<p>输入格式：</p>
+<p>一行，一个十进制。</p>
+<p>输出格式：</p>
+<p>一行，一个二进制，代表输入的二进制。</p>
+<p>样例输入 #1</p>
+<pre><code class="language-test">2
+</code></pre>
+<p>样例输出 #1</p>
+<pre><code class="language-test">0b10
+</code></pre>
+<p>样例输入 #2</p>
+<pre><code class="language-test">10
+</code></pre>
+<p>样例输出 #2</p>
+<pre><code class="language-test">0b1010
+</code></pre>
+<p>分析：我们刚刚学到可以用bin函数接收十进制数字并转化成二进制，我们也要使用刚刚也用过的int函数转成数字才可以使用，代码如下：</p>
+<pre><code class="language-python"><span class="hljs-comment">#例5.6</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">bin</span>(<span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>())))
+</code></pre>
+<p>输出：</p>
+<pre><code class="language-test">0b10
+</code></pre>
+<pre><code class="language-test">0b1010
+</code></pre>
+<p>【例题5.4】</p>
+<p>题目描述：</p>
+<p>输入一个二进制，并转化成十六进制。</p>
+<p>输入格式：</p>
+<p>一行，一段二进制。</p>
+<p>输出格式：</p>
+<p>一段十六进制，表示这段二进制的十六进制。</p>
+<p>样例输入 #1</p>
+<pre><code class="language-test"><span class="hljs-number">1010</span>
+</code></pre>
+<p>样例输出 #1</p>
+<pre><code class="language-test">0xa
+</code></pre>
+<p>分析：我们没有函数可以把二进制转化成十六进制的，但是我们可以先把二进制转化成十进制再转成十六进制即可，由于有点儿多，我们可以使用变量来存储，代码如下：</p>
+<pre><code class="language-python"><span class="hljs-comment">#例5.7</span>
+a = <span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>(),<span class="hljs-number">2</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">hex</span>(a))
+</code></pre>
+<p>输出：</p>
+<pre><code class="language-test">0xa
+</code></pre>
+<p>或者你比较头铁非要写在一行写，也可以这样：</p>
+<pre><code class="language-python"><span class="hljs-comment">#例5.8</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">hex</span>(<span class="hljs-built_in">int</span>(<span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>(),<span class="hljs-number">2</span>))))
+</code></pre>
+<p>输出：</p>
+<pre><code>0xa
+</code></pre>
+<p>但是这样可读性较差，我们以可读性作为首位，这也是便于后续人员进行维护。</p>
+<h2 id="第六章：结构-1">第六章：结构</h2>
+<h3 id="61-引言">6.1 引言</h3>
+<p>我们生活中经常进行判断，循环等操作，这些都是结构，结构大致分两种，一是顺序结构，二是嵌套结构，顺序结构就是多个语句并列在一起，嵌套结构就是语句中还有语句，让我们在今天开始学习结构吧。</p>
+<h3 id="62-for语句">6.2 for语句</h3>
+<p>什么是for语句？很简单就是6.1引言中提到的循环，当然for还有其他用处，这章只教循环。<br>for循环的基本语法是这样的：</p>
+<pre><code class="language-python"><span class="hljs-keyword">for</span> 循环变量 <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(次数):
+　　循环体
+并列代码
+</code></pre>
+<p>我们来慢慢理解。</p>
+<p>循环变量就是在这个循环中的变量，每次循环，循环变量都会增加1，且可以被调用。</p>
+<p>循环体就是你要写的代码，我们叫它下级代码，下级代码通常会执行“次数”次。</p>
+<p>此外，如果执行完后会执行并列代码。</p>
+<p>例如：</p>
+<pre><code class="language-python"><span class="hljs-comment">#例6.1</span>
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">5</span>):
+　　<span class="hljs-built_in">print</span>(<span class="hljs-string">"1"</span>)
+</code></pre>
+<p>这段代码会打印5次“1”，来看输出：</p>
+<pre><code class="language-test">1
+1
+1
+1
+1
+</code></pre>
+<p>需要注意的是，循环变量默认是从0开始的，而循环变量只会到“次数”-1的时候，而且每次只会增加一个，要想改变只能增加起始值，终止值，步长，所以for循环的语法是：</p>
+<pre><code class="language-python"><span class="hljs-keyword">for</span> 循环变量 <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(起始值，终止值，步长):
+　　循环体
+</code></pre>
+<p>我们也来慢慢理解。</p>
+<p>起始值就是最开始的值，终止值就是结束的值，但循环变量只能循环到终止值-1，步长就是每次改变循环变量的方式。</p>
+<p>需要注意的是，起始值和步长可以不要，但终止值一定要有，平常就随便填一个数字也是终止值，例如：例6.1括号中的5就是终止值。</p>
+<p>其余基本一样。</p>
+<p>来看一段代码：</p>
+<pre><code class="language-python"><span class="hljs-comment">#例6.2</span>
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>,<span class="hljs-number">11</span>):
+    <span class="hljs-built_in">print</span>(i)
+</code></pre>
+<p>这个代码的作用是打印出来1到10，来看输出：</p>
+<pre><code class="language-test">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</code></pre>
+<p>如果我们加上步长呢？如这段代码：</p>
+<pre><code class="language-python"><span class="hljs-comment">#例6.3</span>
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">2</span>,<span class="hljs-number">101</span>,<span class="hljs-number">3</span>):
+　　<span class="hljs-built_in">print</span>(i)
+</code></pre>
+<p>输出：</p>
+<pre><code class="language-test">2
+5
+8
+11
+14
+17
+20
+23
+26
+29
+32
+35
+38
+41
+44
+47
+50
+53
+56
+59
+62
+65
+68
+71
+74
+77
+80
+83
+86
+89
+92
+95
+98
+</code></pre>
+<p>由输出可得知，for循环循环时优先执行判断，如果加上3大于100，那么就不执行了。</p>
+<p>另外，我们还有两个专门为循环而生的函数：<br>continue函数与break函数。让我们分别看一下这些功能吧：</p>
+<ul>
+<li><p><strong>continue</strong>: 跳过该循环，continue执行后直接进入下次循环。</p>
+</li>
+<li><p><strong>break</strong>：跳出该循环，break执行后不执行循环了，直接继续执行与for语句并列的代码。</p>
+</li>
+</ul>
+<p>我们来举个例子吧：</p>
+<pre><code class="language-python"><span class="hljs-comment">#例6.4</span>
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">10</span>):
+    <span class="hljs-built_in">print</span>(<span class="hljs-number">1</span>)
+    <span class="hljs-keyword">break</span>
+    <span class="hljs-built_in">print</span>(<span class="hljs-number">2</span>)
+<span class="hljs-built_in">print</span>()
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">10</span>):
+    <span class="hljs-built_in">print</span>(<span class="hljs-number">1</span>)
+    <span class="hljs-keyword">continue</span>
+    <span class="hljs-built_in">print</span>(<span class="hljs-number">2</span>)
+</code></pre>
+<p>输出：</p>
+<pre><code class="language-test">1
+
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+</code></pre>
+<p>代码第六行用\n做了个隔断，让我们来看看吧：</p>
+<ul>
+<li><p><strong>break</strong>：输出完1后直接没了，然后执行第六行和下一个for循环，且不输出2。</p>
+</li>
+<li><p><strong>continue</strong>：输出完1后继续输出1，直到输出了10次。</p>
+</li>
+<li><p><strong>break与continue的共同点</strong>：</p>
+<ul>
+<li><p><strong>第一个</strong>：执行完continue或者break后，剩余的下级代码就不输出了，要么跳过循环，要么跳出循环。</p>
+</li>
+<li><p><strong>第二个</strong>：只能在循环中使用。</p>
+<h3 id="63-if语句">6.3 if语句</h3>
+<p>同时，我们还说过会判断，判断我们常用的是if语句，if语句的格式通常为：</p>
+<pre><code class="language-python"><span class="hljs-keyword">if</span> 条件:
+下级代码
+并列代码
+</code></pre>
+<p>条件如果为真（True），就执行下级代码，如果为假（False）那么执行并列代码。</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>例如：</p>
+<pre><code class="language-python"><span class="hljs-comment">#例6.5</span>
+a=<span class="hljs-number">1</span>
+<span class="hljs-keyword">if</span> a==<span class="hljs-number">2</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-number">1</span>)
+<span class="hljs-keyword">if</span> a==<span class="hljs-number">1</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-number">2</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-number">3</span>)
+</code></pre>
+<p>这段代码的意思是判断a，a是2输出1，a是1输出2，然后输出3。</p>
+<p>输出如下：</p>
+<pre><code class="language-test">2
+3
+</code></pre>
+<p>因为第二个if语句为真所以执行输出2，之后输出3是无论什么都输出3。</p>
+<p>同时 我们由if又拓展出了if…elif，if…elif…else，if…else，if…elif…elif……else这几个语句，我们慢慢来。</p>
+<p>if是必须执行的，如果if的条件不成立那么执行elif，elif的条件还不成立，那么执行下一个elif，如果所有的elif和if都不成立，那么执行else。</p>
+<p>所以格式通常为：</p>
+<pre><code class="language-python"><span class="hljs-keyword">if</span> 条件：
+    代码
+<span class="hljs-keyword">elif</span> 条件：
+    代码
+…
+<span class="hljs-keyword">else</span>:
+    代码
+</code></pre>
+<p>现在来讲讲if…elif和if……if的区别：</p>
+<ul>
+<li><strong>if…elif</strong>：若if成立，elif不判断，若if不成立，elif判断。</li>
+<li><strong>if……if</strong>：无论第一个if成立不成立，第二个if都会判断。</li>
+</ul>
+<p>以后会学到更高效，简单的写法——<strong>match-case写法</strong>，但match-case不是万能的，有时还会更复杂。</p>
+<p>我们刚刚使用过==符号，这属于<strong>逻辑运算符</strong>，其它的逻辑运算符还有：</p>
+<pre><code class="language-test">==
+<span class="hljs-meta prompt_">&gt;</span><span class="language-bash">
+&lt;</span>
+<span class="hljs-meta prompt_">&gt;</span><span class="language-bash">=</span>
+<span class="hljs-meta prompt_">&gt;</span><span class="language-bash">=</span>
+!=
+</code></pre>
+<p>每个的意思是：</p>
+<pre><code class="language-test">是否相等
+是否大于
+是否小于
+是否大于等于
+是否小于等于
+是否不等于
+</code></pre>
+<p>那么，我现在有两个条件，要两个条件都成立才能执行下级代码，该怎么办呢？可以这样：</p>
+<pre><code class="language-python"><span class="hljs-keyword">if</span> 条件<span class="hljs-number">1</span>:
+    <span class="hljs-keyword">if</span> 条件<span class="hljs-number">2</span>:
+        下级代码
+</code></pre>
+<p>如果我现在有两个条件，两个条件任意之一成立就能执行下级代码，该怎么办呢？可以这样：</p>
+<pre><code class="language-python"><span class="hljs-keyword">if</span> 条件<span class="hljs-number">1</span>:
+    下级代码
+<span class="hljs-keyword">if</span> 条件<span class="hljs-number">2</span>:
+    下级代码
+</code></pre>
+<p>这样未免过于复杂，相同代码要写两遍，可能还要进行其他的，其实两个都可以简化，先看第一个简化：</p>
+<pre><code class="language-python"><span class="hljs-keyword">if</span> 条件<span class="hljs-number">1</span> <span class="hljs-keyword">and</span> 条件<span class="hljs-number">2</span>:
+    下级代码
+</code></pre>
+<p>由此可见，and是判断条件1和条件2是否成立，都成立才成立，例如：</p>
+<pre><code class="language-python"><span class="hljs-comment">#例6.6</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-number">1</span>==<span class="hljs-number">2</span> <span class="hljs-keyword">and</span> <span class="hljs-number">1</span>==<span class="hljs-number">1</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-number">2</span>==<span class="hljs-number">2</span> <span class="hljs-keyword">and</span> <span class="hljs-number">1</span>==<span class="hljs-number">1</span>)
+</code></pre>
+<p>输出：</p>
+<pre><code class="language-test"><span class="hljs-literal">False</span>
+<span class="hljs-literal">True</span>
+</code></pre>
+<p>来看第二段代码的简化：</p>
+<pre><code class="language-python"><span class="hljs-keyword">if</span> 条件<span class="hljs-number">1</span> <span class="hljs-keyword">or</span> 条件<span class="hljs-number">2</span>:
+    下级代码
+</code></pre>
+<p>由此可见，or就是判断条件1和条件2是否有至少一个条件成立，只要有成立的就成立了，例如：</p>
+<pre><code class="language-python"><span class="hljs-comment">#例6.7</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-number">1</span>==<span class="hljs-number">1</span> <span class="hljs-keyword">or</span> <span class="hljs-number">2</span>==<span class="hljs-number">1</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-number">1</span>==<span class="hljs-number">2</span> <span class="hljs-keyword">or</span> <span class="hljs-number">2</span>==<span class="hljs-number">1</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-number">1</span>==<span class="hljs-number">1</span> <span class="hljs-keyword">or</span> <span class="hljs-number">2</span>==<span class="hljs-number">2</span>)
+</code></pre>
+<p>输出：</p>
+<pre><code class="language-test"><span class="hljs-literal">True</span>
+<span class="hljs-literal">False</span>
+<span class="hljs-literal">True</span>
+</code></pre>
+<p>还有内容会在后面讲。</p>
+<h3 id="64-while语句">6.4 while语句</h3>
+<p>while语句也是循环的一种，但不同于for循环，while语句的格式通常为：</p>
+<pre><code class="language-python"><span class="hljs-keyword">while</span> 条件:
+    下级代码
+</code></pre>
+<p>当条件成立时，执行下级代码，注意，while语句没有循环变量。</p>
+<p>当条件里填True时，那么下级代码会一直执行，为了防止这样发生，你得在下级代码里设置一个break才行，反之填False时，while语句永远不会执行。</p>
+<p>来看几个例子：</p>
+<pre><code class="language-python"><span class="hljs-comment">#例6.8</span>
+i=<span class="hljs-number">1</span>
+<span class="hljs-keyword">while</span> i==<span class="hljs-number">1</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-number">1</span>)
+    <span class="hljs-keyword">break</span>
+</code></pre>
+<p>输出：</p>
+<pre><code class="language-test">1
+</code></pre>
+<pre><code class="language-python"><span class="hljs-comment">#例6.9</span>
+i=<span class="hljs-number">1</span>
+<span class="hljs-keyword">while</span> i==<span class="hljs-number">1</span>:
+    i=<span class="hljs-number">2</span>
+<span class="hljs-built_in">print</span>(i)
+</code></pre>
+<p>输出：</p>
+<pre><code class="language-test">2
+</code></pre>
+<pre><code class="language-python"><span class="hljs-comment">#例6.10</span>
+<span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-number">1</span>)
+</code></pre>
+<p>输出：</p>
+<pre><code class="language-test">1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+…
+</code></pre>
+<p>省略号代表省略无数个1，所以执行while True时，得设置一个break，我们常用if进行判断，然后设置break，这会在以后讲解，我们俗称“嵌套结构”。</p>
+<h3 id="65-嵌套结构">6.5 嵌套结构</h3>
+<p>刚才，我提到了“嵌套结构”，现在就来学习一下。</p>
+<p>紧接上回，在执行while True时得设置一个break，通常用if判断，例如：</p>
+<pre><code class="language-python"><span class="hljs-comment">#例6.11</span>
+i=<span class="hljs-number">1</span>
+<span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:
+     <span class="hljs-built_in">print</span>(i)
+     <span class="hljs-keyword">if</span> i==<span class="hljs-number">2</span>:
+         <span class="hljs-keyword">break</span>
+     i=<span class="hljs-number">2</span>
+</code></pre>
+<p>输出：</p>
+<pre><code class="language-test">1
+2
+</code></pre>
+<p>为什么会输出1，2呢？因为if语句没有放到首位，如果放到首位会先执行if判断，但这里没有，会执行print，可以参考这个表：</p>
+<table>
+<thead>
+<tr>
+<th>第几次</th>
+<th>发生了什么事情</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>第一次</td>
+<td>打印i if判断不成立</td>
+</tr>
+<tr>
+<td>第二次</td>
+<td>打印i if判断成立跳出循环</td>
+</tr>
+</tbody></table>
+<p>在嵌套结构和for循环中，有一个很重要的算法思想是“枚举”，也称作“穷举”，这会在以后学完其它数据类型后会讲解。</p>
+<h3 id="66-match-case结构">6.6 match-case结构</h3>
+<p>Python中的match-case结构类似于C++里的switch-case结构，但是match-case比其它类似结构能做的要多的多，这个小结只教基础。</p>
+<p>match-case的格式基本如下：</p>
+<pre><code class="language-python"><span class="hljs-keyword">match</span> 变量:
+    <span class="hljs-keyword">case</span> 值<span class="hljs-number">1</span>:
+        代码块
+    <span class="hljs-keyword">case</span> 值<span class="hljs-number">2</span>:
+        代码块
+    <span class="hljs-keyword">case</span> _:
+        代码块
+</code></pre>
+<p>其中case _代表之前的值都不对应时执行，例如：</p>
+<pre><code class="language-python"><span class="hljs-comment">#例6.12</span>
+a=<span class="hljs-number">1</span>
+<span class="hljs-keyword">match</span> a:
+    <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>:
+        <span class="hljs-built_in">print</span>(<span class="hljs-number">1</span>)
+    <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>:
+        <span class="hljs-built_in">print</span>(<span class="hljs-number">2</span>)
+    <span class="hljs-keyword">case</span> _:
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">"other"</span>)
+</code></pre>
+<p>输出：</p>
+<pre><code class="language-test">1
+</code></pre>
+<p>如果a是2，那么打印2，如果是3，那么打印other，如果换成if…elif…else语句是这样的：</p>
+<pre><code class="language-python"><span class="hljs-comment">#例6.13</span>
+a=<span class="hljs-number">1</span>
+<span class="hljs-keyword">if</span> a==<span class="hljs-number">1</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-number">1</span>)
+<span class="hljs-keyword">elif</span> a==<span class="hljs-number">2</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-number">2</span>)
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">"other"</span>)
+</code></pre>
+<p>输出：</p>
+<pre><code class="language-test">1
+</code></pre>
+<p>但是，match-case运用得当，比if语句更高效更简单。</p>
+<p>这个小结就教这么多，后续其它方法会在以后讲解。</p>
+<h3 id="67-程序设计">6.7 程序设计</h3>
+<p>【例题6.1】</p>
+<p>阅读下面代码，会输出什么：</p>
+<pre><code class="language-python"><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">10</span>):
+    <span class="hljs-keyword">if</span> i==<span class="hljs-number">5</span>:
+        <span class="hljs-built_in">print</span>(<span class="hljs-number">2</span>)
+        <span class="hljs-keyword">continue</span>
+    <span class="hljs-built_in">print</span>(<span class="hljs-number">1</span>)
+</code></pre>
+<p>分析：这段代码是嵌套结构，每次循环会判断循环变量i是否是5，是打印2，然后继续下一次循环，需要注意的是i是从0开始的，i=5时是在第六行，所以答案如下：</p>
+<pre><code class="language-test">1
+1
+1
+1
+1
+2
+1
+1
+1
+1
+</code></pre>
+<p>【例题6.2】</p>
+<p>将如下if语句转为非if语句：</p>
+<pre><code class="language-python">a=<span class="hljs-number">5</span>
+<span class="hljs-keyword">if</span> a==<span class="hljs-number">0</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">"zero"</span>)
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">"not zero"</span>)
+</code></pre>
+<p>分析：我们可以将这个if语句转成match-case结构，代码如下：</p>
+<pre><code class="language-python"><span class="hljs-comment">#例6.14</span>
+a=<span class="hljs-number">5</span>
+<span class="hljs-keyword">match</span> a:
+    <span class="hljs-keyword">case</span> <span class="hljs-number">0</span>:
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">"zero"</span>)
+    <span class="hljs-keyword">case</span> _:
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">"not zero"</span>)
+</code></pre>
+<p>输出应该是：</p>
+<pre><code class="language-test">not zero
+</code></pre>
+<p>【例题6.3】</p>
+<p>题目描述：</p>
+<p>输入一个整数a，再输入一个整数b，判断a是否比b大，是输出yes，不是输出no。</p>
+<p>输入格式：</p>
+<p>两行，一行一个数字，分别表示a和b</p>
+<p>输出格式：</p>
+<p>一行，表示a是否比b大</p>
+<p>样例输入 #1</p>
+<pre><code class="language-test">10
+2
+</code></pre>
+<p>样例输出 #1</p>
+<pre><code class="language-test"><span class="hljs-keyword">no</span>
+</code></pre>
+<p>样例输入 #2</p>
+<pre><code class="language-test">50
+10
+</code></pre>
+<p>样例输出 #2</p>
+<pre><code class="language-test"><span class="hljs-built_in">yes</span>
+</code></pre>
+<p>分析：我们可以分别定义两个变量来存储a和b，然后用if语句判断，代码如下：</p>
+<pre><code class="language-python"><span class="hljs-comment">#例6.14</span>
+a=<span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>())
+b=<span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>())
+<span class="hljs-keyword">if</span> a&gt;b:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">"yes"</span>)
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">"no"</span>)
+</code></pre>
+<p>我们还能简化例6.14，如：</p>
+<pre><code class="language-python"><span class="hljs-comment">#例6.15</span>
+<span class="hljs-keyword">if</span> <span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>()) &gt; <span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>()):
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">"yes"</span>)
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">"no"</span>)
+</code></pre>
+<p>与例1.5一样，这段代码会优先执行input()，然后用int()转成整数形式，之后才会进行判断，输出。</p>
+<p>【例题6.3】</p>
+<p>题目描述：</p>
+<p>分别输入两个数字，找出较大的数，输出较大的数字，若一样输出一样的数字。</p>
+<p>输入格式：</p>
+<p>一共两行，一行一个，分别表示两个数字。</p>
+<p>输出格式：</p>
+<p>一行，表示较大是数字。</p>
+<p>输入样例 #1</p>
+<pre><code class="language-test">123
+56
+</code></pre>
+<p>输出样例 #1</p>
+<pre><code class="language-test">123
+</code></pre>
+<p>输入样例 #2</p>
+<pre><code class="language-test">5
+5
+</code></pre>
+<p>输出样例 #2</p>
+<pre><code class="language-test">5
+</code></pre>
+<p>分析：这题很明显是要用if语句进行判断，代码如下：</p>
+<pre><code class="language-python"><span class="hljs-comment">#例6.16</span>
+a=<span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>())
+b=<span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>())
+<span class="hljs-keyword">if</span> a&gt;b:
+    <span class="hljs-built_in">print</span>(a)
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-built_in">print</span>(b)  <span class="hljs-comment"># 如果一样，输出b也可以</span>
+</code></pre>
+<p>输出：</p>
+<pre><code class="language-test">123
+</code></pre>
+<pre><code class="language-test">5
+</code></pre>
+<p>当然，我们还有更简单的写法：</p>
+<pre><code class="language-python"><span class="hljs-comment">#例6.17</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">max</span>(<span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>()),<span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>())))
+</code></pre>
+<p>max()函数是对括号里的参数进行一个比较并返回一个最大的数字，参数可以是无限的，所以我们也可以把参数改为3个，甚至更多。</p>
+<h2 id="第七章：运算符-1">第七章：运算符</h2>
+<h3 id="71-引言">7.1 引言</h3>
+<p>在我们生活中，时常会进行很多计算，如：加减乘除，幂运算等等。今天我们来学习运算符。</p>
+<h3 id="72-运算符的种类">7.2 运算符的种类</h3>
+<p>在Python中有很多运算符，我们大致可以分为以下几类：</p>
+<table>
+<thead>
+<tr>
+<th>运算符种类</th>
+<th>一些符号</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1.算术运算符</td>
+<td>+-*/**%//</td>
+</tr>
+<tr>
+<td>2.比较运算符(逻辑运算符)</td>
+<td>&gt;&lt;==…</td>
+</tr>
+<tr>
+<td>3.布尔运算符</td>
+<td>and or not</td>
+</tr>
+<tr>
+<td>4.位运算符</td>
+<td>&amp;  &gt;&gt;&lt;&lt;…</td>
+</tr>
+</tbody></table>
+<p>现在只需要知道1，2，3即可。</p>
+<p>首先，第一个是我们平常的运算，分别是：</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>作用</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>+</td>
+<td>加</td>
+<td>1+2=3</td>
+</tr>
+<tr>
+<td>-</td>
+<td>减</td>
+<td>15-2=13</td>
+</tr>
+<tr>
+<td>*</td>
+<td>乘</td>
+<td>3*21=63</td>
+</tr>
+<tr>
+<td>/</td>
+<td>除</td>
+<td>10/2=5</td>
+</tr>
+<tr>
+<td>**</td>
+<td>幂运算</td>
+<td>5**2=25</td>
+</tr>
+<tr>
+<td>％</td>
+<td>取余</td>
+<td>5%2=1</td>
+</tr>
+</tbody></table>
+<p>然后是比较运算符，有时也称作逻辑运算符，基础只要学会如下：</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&gt;=</td>
+<td>判断是否大于等于</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>判断是否大于</td>
+</tr>
+<tr>
+<td>＜和≤</td>
+<td>也是同理</td>
+</tr>
+<tr>
+<td>!=</td>
+<td>判断是否不等于</td>
+</tr>
+<tr>
+<td>==</td>
+<td>判断是否等于</td>
+</tr>
+</tbody></table>
+<p>以及布尔运算符只需要暂时学习and和not即可，功能可以参考下表。</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>作用</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>and</td>
+<td>两个或者多个条件是否都是True</td>
+<td>1==1 and 2==2为True，1==1 and 2==1为False，1==2 and 2==1为False</td>
+</tr>
+<tr>
+<td>or</td>
+<td>两个或者多个条件是否只有一个条件为True</td>
+<td>1==1 or 2==2为True，1==1 or 2==1为True，2==1 or 1==2为False</td>
+</tr>
+</tbody></table>
+<p>对于优先级，你可以参考如下（从高到低）：</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>成员（部分）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>括号</td>
+<td>()，注意[]等不算，这有其他用处</td>
+</tr>
+<tr>
+<td>幂运算</td>
+<td>**</td>
+</tr>
+<tr>
+<td>乘，除，取模，整除</td>
+<td>*/%//</td>
+</tr>
+<tr>
+<td>加，减</td>
+<td>+-</td>
+</tr>
+<tr>
+<td>比较运算符</td>
+<td>&gt;&lt;==……</td>
+</tr>
+<tr>
+<td>逻辑与</td>
+<td>and</td>
+</tr>
+<tr>
+<td>逻辑或</td>
+<td>or(优先级最低)</td>
+</tr>
+</tbody></table>
+<p>对于这些，你可以记住一个口诀：</p>
+<p>先括号，再计算，后比较，逻辑啥的不重要。</p>
+<p>注意，逻辑真的不是不重要的。</p>
+<h3 id="73-程序设计">7.3 程序设计</h3>
+<p>【例题7.1】</p>
+<p>题目描述：</p>
+<p>输入一个整数n，判断是否是3的倍数，是输出"Yes"，反之输出"No"。</p>
+<p>输入格式：</p>
+<p>共一行，第一行是一个数字，表述整数n。</p>
+<p>输出格式：</p>
+<p>共一行，表示是否是3的倍数。</p>
+<p>输入样例 #1</p>
+<pre><code class="language-test">6
+</code></pre>
+<p>输出样例 #1</p>
+<pre><code class="language-test"><span class="hljs-literal">Yes</span>
+</code></pre>
+<p>输入样例 #2</p>
+<pre><code class="language-test">4
+</code></pre>
+<p>输出样例 #2</p>
+<pre><code class="language-test"><span class="hljs-literal">No</span>
+</code></pre>
+<p>分析：我们用取余与之前学习的if语句结合进行判断，然后用比较运算符的==，来看代码：</p>
+<pre><code class="language-python"><span class="hljs-comment">#例7.1</span>
+a=<span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>())
+<span class="hljs-keyword">if</span> a%<span class="hljs-number">3</span>==<span class="hljs-number">0</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">"Yes"</span>)
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">"No"</span>)
+</code></pre>
+<p>输出：</p>
+<pre><code class="language-test"><span class="hljs-literal">Yes</span>
+</code></pre>
+<pre><code class="language-test"><span class="hljs-literal">No</span>
+</code></pre>
+<p>也可以简化例7.1，来看代码：</p>
+<pre><code class="language-python"><span class="hljs-comment">#例7.2</span>
+<span class="hljs-keyword">if</span> <span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>()) % <span class="hljs-number">3</span> == <span class="hljs-number">0</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">"Yes"</span>)
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">"No"</span>)
+</code></pre>
+<p>【例题7.2】</p>
+<p>题目描述：</p>
+<p>输入一个整数n，如果n的两倍是5的倍数，是输出"yes"，反之输出"no"。</p>
+<p>输入格式：</p>
+<p>共一行，表示整数n。</p>
+<p>输出格式：</p>
+<p>共一行，第一行输出"yes"或者"no"，表示是否合法。</p>
+<p>输入样例 #1</p>
+<pre><code class="language-test">5
+</code></pre>
+<p>输出样例 #1</p>
+<pre><code class="language-test"><span class="hljs-built_in">yes</span>
+</code></pre>
+<p>输入样例 #2</p>
+<pre><code class="language-test">7
+</code></pre>
+<p>输出样例 #2</p>
+<pre><code class="language-test"><span class="hljs-keyword">no</span>
+</code></pre>
+<p>分析：这题可以用*乘，再判断，来看代码：</p>
+<pre><code class="language-python"><span class="hljs-comment">#例7.3</span>
+a=<span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>())*<span class="hljs-number">2</span>
+<span class="hljs-keyword">if</span> a%<span class="hljs-number">5</span>==<span class="hljs-number">0</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">"yes"</span>)
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">"no"</span>)
+</code></pre>
+<p>输出：</p>
+<pre><code class="language-test"><span class="hljs-built_in">yes</span>
+</code></pre>
+<pre><code class="language-test"><span class="hljs-keyword">no</span>
+</code></pre>
+<p>其实，这道题有一个致命漏洞，我们可以直接接受，不用乘2，是5的倍数的数字乘2还是5的倍数，因为这是个公倍数，一定能被5除，所以我们稍微简化下可以这样：</p>
+<pre><code class="language-python"><span class="hljs-comment">#例7.4</span>
+<span class="hljs-keyword">if</span> <span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>()) % <span class="hljs-number">5</span> == <span class="hljs-number">0</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">"yes"</span>)
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">"no"</span>)
+</code></pre>
+<p>输出：</p>
+<pre><code class="language-test"><span class="hljs-built_in">yes</span>
+</code></pre>
+<pre><code class="language-test"><span class="hljs-keyword">no</span>
+</code></pre>
+<p>输出也是一样的。</p>
+<p>【例题7.3】</p>
+<p>题目描述：</p>
+<p>输入一个整数n，输出 $2n-1$ 的结果。</p>
+<p>输入格式：</p>
+<p>共一行，第一行一个数字，表示整数n。</p>
+<p>输出格式：</p>
+<p>共一行，第一行一个数字，表示结果。</p>
+<p>输入样例 #1</p>
+<pre><code class="language-test">5
+</code></pre>
+<p>输出样例 #1</p>
+<pre><code class="language-test">9
+</code></pre>
+<p>分析：这题考验你是否能读懂题目，要是读懂了就很简单了，我们用*和-来进行运算，代码如下：</p>
+<pre><code class="language-python"><span class="hljs-comment">#例7.5</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>())*<span class="hljs-number">2</span>-<span class="hljs-number">1</span>)
+</code></pre>
+<p>输出：</p>
+<pre><code class="language-test">9
+</code></pre>
+<h2 id="第八章：字符串-1">第八章：字符串</h2>
+<h3 id="81-引言">8.1 引言</h3>
+<p>我们在第二章变量中就略微提过字符串，并说过会在以后详细讲解，现在来了，让我们一起走进字符串的学习。</p>
+<h3 id="82-字符串">8.2 字符串</h3>
+<p>字符串通常由英文的双引号表示，比如：""，''，""""""或''''''这些基础知识我们在之前基本都讲过了，我也不在这赘述。</p>
+<p>字符串每个由字符组成，字符通常是一个，例如：</p>
+<p>"123"</p>
+<p>其中，1是字符，2是字符，3是字符。</p>
+<p>就这样。</p>
+<h3 id="83-遍历字符串">8.3 遍历字符串</h3>
+<p>这是基本的操作，在以后学习列表也是。</p>
+<p>字符串的遍历我们常使用<code>for循环</code>，不过时一种更简单的方式，来看代码：</p>
+<pre><code class="language-python"><span class="hljs-comment">#例8.1</span>
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-string">"123"</span>:
+    <span class="hljs-built_in">print</span>(i)
+</code></pre>
+<p>输出：</p>
+<pre><code class="language-test">1
+2
+3
+</code></pre>
+<p>因为i为"123"里的第i个元素，也就是第一次执行时，i为"123"里的第一个元素，即"1"，第二次执行时是"123"里的第二个元素，即"2"，第三次执行时是"123"里的第三个元素，即"3"。</p>
+<p>例如例8.1类似的还有其它很多。</p>
+<h3 id="84-输出改变后的字符串字符">8.4 输出改变后的字符串字符</h3>
+<p>我们用刚刚使用的方法，例如：</p>
+<pre><code class="language-python"><span class="hljs-comment">#例8.2</span>
+a = <span class="hljs-string">"123"</span>
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> a:
+    <span class="hljs-built_in">print</span>(<span class="hljs-built_in">str</span>(<span class="hljs-built_in">int</span>(i)+<span class="hljs-number">1</span>))
+</code></pre>
+<p>输出：</p>
+<pre><code class="language-test">2
+3
+4
+</code></pre>
+<p>或者说，这样写：</p>
+<pre><code class="language-python"><span class="hljs-comment">#例8.3</span>
+a = <span class="hljs-string">"123"</span>
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">3</span>):
+    <span class="hljs-built_in">print</span>(<span class="hljs-built_in">str</span>(<span class="hljs-built_in">int</span>(a[i])+<span class="hljs-number">1</span>))
+</code></pre>
+<p>输出也是：</p>
+<pre><code class="language-test">2
+3
+4
+</code></pre>
+<p>如你所见，我们使用了<code>a[i]</code>，我们管这个叫做下标，下标不止字符串，还可以作用在列表等数据结构上，我们可以在以后中学到。</p>
+<h3 id="85-字符串切片">8.5 字符串切片</h3>
+<p>看到这个标题应该很蒙吧，什么是<code>切片</code>，直观来讲，就是简便的输出某个部分，常用的是下标。来看示例：</p>
+<pre><code class="language-python"><span class="hljs-comment">#例8.4</span>
+a = <span class="hljs-string">'123'</span>
+<span class="hljs-built_in">print</span>(a[:<span class="hljs-number">2</span>])
+<span class="hljs-built_in">print</span>(a[<span class="hljs-number">1</span>:])
+<span class="hljs-built_in">print</span>(a[<span class="hljs-number">1</span>:<span class="hljs-number">2</span>])
+<span class="hljs-built_in">print</span>(a[<span class="hljs-number">1</span>:-<span class="hljs-number">1</span>])
+</code></pre>
+<p>输出：</p>
+<pre><code class="language-text">'1'
+'23'
+'2'
+'2'
+</code></pre>
+<p>所以，我们可以知道：</p>
+<ul>
+<li><p><strong>:N</strong>: 表示前N位。</p>
+</li>
+<li><p><strong>N:</strong>: 表示后N位。</p>
+</li>
+<li><p><strong>N1:N2</strong>：表示N1到N2位，其中通常N2不被获取值。</p>
+</li>
+<li><p><strong>-1</strong>：表示最后一位，大部分的存储方式都支持。</p>
+</li>
+</ul>
+<p>那么，下面这段代码会输出什么？</p>
+<pre><code class="language-python"><span class="hljs-comment">#例8.5</span>
+a = <span class="hljs-string">'Hello World'</span>
+<span class="hljs-built_in">print</span>(a[<span class="hljs-number">0</span>:-<span class="hljs-number">1</span>])
+</code></pre>
+<p>根据刚刚学过的切片，可以知道这段代码的意思是<code>Hello World</code>的除最后一位以外的所有字符，输出：</p>
+<pre><code class="language-text">Hello Worl
+</code></pre>
+<h2 id="86程序设计">8.6程序设计</h2>
+<p>【例题8.1】</p>
+
+</div>
+</body>
+</html>
